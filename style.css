@@ -1,0 +1,75 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: rgb(118, 177, 154);
+  padding: 0 10px;
+  margin-top: 5%;
+}
+.container {
+  max-width: 500px;
+  width: 100%;
+  background-color: whitesmoke;
+  margin: 20px auto;
+  padding: 30px;
+  box-shadow: 4px 4px 4px rgb(172, 155, 155);
+}
+.container .title {
+  font-size: 20px;
+  font-weight: 800;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-bottom: 25px;
+  color: cadetblue;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.container .form {
+  width: 100%;
+}
+.input_field {
+  padding-bottom: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.input_field label {
+  margin-right: 10px;
+  width: 45%;
+  font-size: 15px;
+}
+.input_field .input {
+  border: 2px solid rgb(183, 161, 243);
+  font-size: 16px;
+  padding: 4px 10px;
+  border-radius: 3px;
+  transition: all 0.5s ease;
+  resize: none;
+}
+#selection {
+  position: relative;
+  width: 50%;
+}
+.condition {
+  color: rgb(131, 129, 129);
+  font-size: 14px;
+}
+.check [type="checkbox"] {
+  cursor: pointer;
+}
+.input_field .btn {
+  width: 100%;
+  padding: 8px 10px;
+  font-size: 15px;
+  color: whitesmoke;
+  background-color: #667292;
+  cursor: pointer;
+  border-radius: 4px;
+  outline: none;
+  border: 0;
+}
+.input_field .btn:hover {
+  background-color: #557eee;
+}
