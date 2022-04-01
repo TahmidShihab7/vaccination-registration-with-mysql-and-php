@@ -68,7 +68,7 @@
 </body>
 </html>
 <?php
-if($_POST['register'])
+if(isset($_POST['register']))
 {
     $fname = $_POST['fname'];
     $lname = $_POST['lname'];
