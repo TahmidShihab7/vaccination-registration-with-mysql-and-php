@@ -17,7 +17,7 @@
         <div class="form">
             <div class="input_field">
                 <label for="">First Name</label>
-                <input type="text" class="input" name="fname">
+                <input type="text" class="input" name="fname" >
             </div>
                         <div class="input_field">
                 <label for="">Last Name</label>
@@ -79,15 +79,22 @@ if(isset($_POST['register']))
     $phone = $_POST['phone'];
     $address = $_POST['address'];
 
+    if($fname !="" && $lname !="" && $password !="" && $conpassword !="" && $gender !="" && $email !="" && $phone !="" && $address !="")
+    {
     $query = "INSERT INTO REGISTRATION_DATABASE VALUES ('$fname','$lname','$password','$conpassword','$gender','$email','$phone','$address')";
     $data = mysqli_query($connection,$query);
     if($data)
     {
-        echo "Data Inserted";
+        // echo "Data Inserted";
     }
     else
     {
         echo "Failed";
     }
+}
+else 
+{
+    echo "<script>alert('Tahmid Vhai says : Please fill up the form properly.');</script>";
+}
 }
 ?>

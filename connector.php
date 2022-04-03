@@ -7,7 +7,7 @@
     $connection = mysqli_connect($servername,$username,$password,$dbname);
     if($connection)
     {
-        echo "connected";
+        // echo "connected";
     }
     else
     {
