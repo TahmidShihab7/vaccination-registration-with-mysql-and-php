@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>DBMS Project</title>
+    <title>REGISTRATION FORM</title>
 </head>
 <body>
     <div class="container">
@@ -48,6 +48,14 @@
                 <label for="">Phone</label>
                 <input type="text" class="input" name="phone">
             </div>
+              <div class="input_field">
+                <label for="">Vaccine Type</label>
+                <select  id="selection" class="input" name="vaccine">
+                    <option value="Not Selected">Select</option>
+                    <option value="Type: Hepatitis A  ||  Amount: 100 Taka">Vaccine for Adults</option>
+                    <option value="Type: Polio  ||  Amount: 35 Taka">Vaccine for Children</option>
+                </select>
+            </div>
             <div class="input_field">
                 <label for="">Address</label>
                 <textarea name="address" id="" class="input"cols="20" rows="3"></textarea>
@@ -77,11 +85,12 @@ if(isset($_POST['register']))
     $gender = $_POST['gender'];
     $email = $_POST['email'];
     $phone = $_POST['phone'];
+    $vaccine = $_POST['vaccine'];
     $address = $_POST['address'];
 
-    if($fname !="" && $lname !="" && $password !="" && $conpassword !="" && $gender !="" && $email !="" && $phone !="" && $address !="")
+    if($fname !="" && $lname !="" && $password !="" && $conpassword !="" && $gender !="" && $email !="" && $phone !="" && $vaccine !="" && $address !="")
     {
-    $query = "INSERT INTO REGISTRATION_DATABASE VALUES ('$fname','$lname','$password','$conpassword','$gender','$email','$phone','$address')";
+    $query = "INSERT INTO REGISTRATION_DATABASE VALUES ('$fname','$lname','$password','$conpassword','$gender','$email','$phone','$vaccine','$address')";
     $data = mysqli_query($connection,$query);
     if($data)
     {

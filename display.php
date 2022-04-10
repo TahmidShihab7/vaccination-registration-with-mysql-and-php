@@ -1,3 +1,21 @@
+<html>
+  <head>
+    <title>INFORMATION</title>
+    <style>
+      body
+      {
+        background:rgb(118, 177, 154);
+      }
+      table{
+        background:whitesmoke ;
+      }
+      h2{
+        background:black;
+        color:whitesmoke;
+      }
+    </style>
+  </head>
+<body>
 <?php
  include("connector.php");
  error_reporting(0);
@@ -10,15 +28,17 @@
 //  echo $total;
  if($total != 0)
  {
-   ?>  
-   <table border="5" >
+   ?> 
+   <h2 align="center">REGISTRATION INFORMATION</h2> 
+   <table border="2" align="center" cellspacing="5" width="90%">
        <tr>
-       <th>First Name</th>
-       <th>Last Name</th>
-       <th>Gender</th>
-       <th>Email</th>
-       <th>Phone</th>
-       <th>Address</th>
+       <th width="7.5%">First Name</th>
+       <th width="7.5%">Last Name</th>
+       <th width="8%">Gender</th>
+       <th width="17%">Email</th>
+       <th width="10%">Phone</th>
+       <th width="20%">Vaccine Type and Fees</th>
+       <th width="20%">Address</th>
        </tr>
    
    <?php
@@ -32,14 +52,17 @@
        <td>".$result['gender']."</td>
        <td>".$result['email']."</td>
        <td>".$result['phone']."</td>
+       <td>".$result['vaccine']."</td>
        <td>".$result['address']."</td>
        </tr>
        ";
    }
  }
  else{
-         echo "The has no stored records."; 
+         echo "There has no stored records."; 
  }
 ?>
 </table>
+</body>
+</html>
  <!-- echo $result['fname']." ".$result['lname']." ".$result['gender']." ".$result['email']." ".$result['phone']." ".$result['address']."<br>"; -->
