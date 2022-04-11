@@ -42,8 +42,22 @@ $fn = $_GET['fn'];
                 <label for="">Gender</label>
                 <select  id="selection" class="input" name="gender">
                     <option value="Not Selected">Select</option>
-                    <option value="Male">Male</option>
-                    <option value="Female">Female</option>
+                    <option value="Male"
+                      <?php
+                      if($result['gender']=='Male')
+                      {
+                          echo "selected";
+                      }
+                      ?>
+                    >Male</option>
+                    <option value="Female"
+                                          <?php
+                      if($result['gender']=='Female')
+                      {
+                          echo "selected";
+                      }
+                      ?>
+                    >Female</option>
                 </select>
             </div>
                 <div class="input_field">
@@ -58,8 +72,23 @@ $fn = $_GET['fn'];
                 <label for="">Vaccine Type</label>
                 <select  id="selection" class="input" name="vaccine">
                     <option value="Not Selected">Select</option>
-                    <option value="Type: Hepatitis A  ||  Amount: 100 Taka">Vaccine for Adults</option>
-                    <option value="Type: Polio  ||  Amount: 35 Taka">Vaccine for Children</option>
+
+                    <option value="Type: Hepatitis A  ||  Amount: 100 Taka"
+                                                              <?php
+                      if($result['vaccine']=='Type: Hepatitis A  ||  Amount: 100 Taka')
+                      {
+                          echo "selected";
+                      }
+                      ?>
+                    >Vaccine for Adults</option>
+                    <option value="Type: Polio  ||  Amount: 35 Taka"
+                                            <?php
+                      if($result['vaccine']=='Type: Polio  ||  Amount: 35 Taka')
+                      {
+                          echo "selected";
+                      }
+                      ?>
+                    >Vaccine for Children</option>
                 </select>
             </div>
             <div class="input_field">
