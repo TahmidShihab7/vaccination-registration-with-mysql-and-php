@@ -1,4 +1,10 @@
-<?php include("connector.php");?>
+<?php include("connector.php");
+$fn = $_GET['fn'];
+ $query = "SELECT * FROM REGISTRATION_DATABASE where fname= '$fn'"; 
+ $data = mysqli_query($connection,$query);
+ $total = mysqli_num_rows($data);
+( $result = mysqli_fetch_assoc($data));
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,31 +12,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>REGISTRATION FORM</title>
+    <title>UPDATE INFORMATION</title>
 </head>
 <body>
     <div class="container">
         <form autocomplete="off" action="#" method="POST">
         <div class="title">
-            vaccination registration 
+            UPDATE INFORMATION 
         </div>
         <div class="form">
             <div class="input_field">
                 <label for="">First Name</label>
-                <input type="text" class="input" name="fname" >
+                <input type="text" class="input" name="fname" value="<?php echo $result['fname']?>">
             </div>
                         <div class="input_field">
                 <label for="">Last Name</label>
-                <input type="text" class="input" name="lname">
+                <input type="text" class="input" name="lname" value="<?php echo $result['lname']?>">
             </div>
                         <div class="input_field">
                 <label for="">Password</label>
-                <input type="password" class="input" name="password">
+                <input type="password" class="input" name="password" value="<?php echo $result['password']?>">
             </div>
         </div>
                     <div class="input_field">
                 <label for="">Confirm Password</label>
-                <input type="password" class="input" name="conpassword">
+                <input type="password" class="input" name="conpassword" value="<?php echo $result['conpassword']?>">
             </div>
                         <div class="input_field">
                 <label for="">Gender</label>
@@ -42,11 +48,11 @@
             </div>
                 <div class="input_field">
                 <label for="">Email</label>
-                <input type="text" class="input" name="email">
+                <input type="text" class="input" name="email" value="<?php echo $result['email']?>">
             </div>
             <div class="input_field">
                 <label for="">Phone</label>
-                <input type="text" class="input" name="phone">
+                <input type="text" class="input" name="phone" value="<?php echo $result['phone']?>">
             </div>
               <div class="input_field">
                 <label for="">Vaccine Type</label>
@@ -58,7 +64,9 @@
             </div>
             <div class="input_field">
                 <label for="">Address</label>
-                <textarea name="address" id="" class="input"cols="20" rows="3"></textarea>
+                <textarea name="address" id="" class="input"cols="20" rows="3">
+                   <?php echo $result['address']; ?>
+                </textarea>
             </div>
                         <div class="input_field ">
                 <label for="" class="check">
@@ -69,7 +77,7 @@
                
             </div>
                         <div class="input_field">
-                    <input type="submit" value="REGISTER" class="btn" name="register">
+                    <input type="submit" value="SUBMIT" class="btn" name="register">
             </div>
             </form>
     </div>

@@ -6,13 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>REGISTRATION FORM</title>
+    <title>UPDATE INFORMATION</title>
 </head>
 <body>
     <div class="container">
         <form autocomplete="off" action="#" method="POST">
         <div class="title">
-            vaccination registration 
+            UPDATE INFORMATION 
         </div>
         <div class="form">
             <div class="input_field">
@@ -69,7 +69,7 @@
                
             </div>
                         <div class="input_field">
-                    <input type="submit" value="REGISTER" class="btn" name="register">
+                    <input type="submit" value="SUBMIT" class="btn" name="register">
             </div>
             </form>
     </div>

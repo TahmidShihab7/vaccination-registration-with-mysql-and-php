@@ -30,15 +30,16 @@
  {
    ?> 
    <h2 align="center">REGISTRATION INFORMATION</h2> 
-   <table border="2" align="center" cellspacing="5" width="90%">
+   <table border="2" align="center" cellspacing="5" width="89%">
        <tr>
-       <th width="7.5%">First Name</th>
-       <th width="7.5%">Last Name</th>
-       <th width="8%">Gender</th>
-       <th width="17%">Email</th>
-       <th width="10%">Phone</th>
+       <th width="7%">First Name</th>
+       <th width="7%">Last Name</th>
+       <th width="5%">Gender</th>
+       <th width="15%">Email</th>
+       <th width="7%">Phone</th>
        <th width="20%">Vaccine Type and Fees</th>
-       <th width="20%">Address</th>
+       <th width="15%">Address</th>
+       <th width="13%">Operations</th>
        </tr>
    
    <?php
@@ -54,6 +55,8 @@
        <td>".$result['phone']."</td>
        <td>".$result['vaccine']."</td>
        <td>".$result['address']."</td>
+       <td><a href='change.php?fn=$result[fname]&ln=$result[lname]&gn=$result[gender]&em=$result[email]&pn=$result[phone] &vc=$result[vaccine] &ad=$result[address]'>Update</a></td>
+    
        </tr>
        ";
    }
