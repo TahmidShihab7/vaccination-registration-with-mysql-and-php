@@ -90,7 +90,7 @@ if(isset($_POST['register']))
 
     if($fname !="" && $lname !="" && $password !="" && $conpassword !="" && $gender !="" && $email !="" && $phone !="" && $vaccine !="" && $address !="")
     {
-    $query = "INSERT INTO REGISTRATION_DATABASE VALUES ('$fname','$lname','$password','$conpassword','$gender','$email','$phone','$vaccine','$address')";
+    $query = "INSERT INTO REGISTRATION_DATABASE (fname,lname,password,conpassword,gender,email,phone,vaccine,address) VALUES ('$fname','$lname','$password','$conpassword','$gender','$email','$phone','$vaccine','$address')";
     $data = mysqli_query($connection,$query);
     if($data)
     {

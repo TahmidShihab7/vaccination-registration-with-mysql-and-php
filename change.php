@@ -1,6 +1,6 @@
 <?php include("connector.php");
-$fn = $_GET['fn'];
- $query = "SELECT * FROM REGISTRATION_DATABASE where fname= '$fn'"; 
+$id = $_GET['id'];
+ $query = "SELECT * FROM REGISTRATION_DATABASE where id= '$id'"; 
  $data = mysqli_query($connection,$query);
  $total = mysqli_num_rows($data);
 ( $result = mysqli_fetch_assoc($data));
@@ -104,16 +104,16 @@ $fn = $_GET['fn'];
                     <span class="condition">Agree to terms and conditions</span>
                 </label>
                
-            </div>
+            </div> 
                         <div class="input_field">
-                    <input type="submit" value="SUBMIT" class="btn" name="register">
+                    <input type="submit" value="SUBMIT" class="btn" name="update">
             </div>
             </form>
     </div>
 </body>
 </html>
 <?php
-if(isset($_POST['register']))
+if(isset($_POST['update']))
 {
     $fname = $_POST['fname'];
     $lname = $_POST['lname'];
@@ -127,15 +127,20 @@ if(isset($_POST['register']))
 
     if($fname !="" && $lname !="" && $password !="" && $conpassword !="" && $gender !="" && $email !="" && $phone !="" && $vaccine !="" && $address !="")
     {
-    $query = "INSERT INTO REGISTRATION_DATABASE VALUES ('$fname','$lname','$password','$conpassword','$gender','$email','$phone','$vaccine','$address')";
+    // $query = "INSERT INTO REGISTRATION_DATABASE VALUES ('$fname','$lname','$password','$conpassword','$gender','$email','$phone','$vaccine','$address')";
+    $query ="UPDATE REGISTRATION_DATABASE set fname='$fname',lname='$lname',password='$password',conpassword='$conpassword',gender='$gender',email='$email',phone='$phone',vaccine='$vaccine',address='$address' WHERE id='$id'";
     $data = mysqli_query($connection,$query);
     if($data)
     {
-        // echo "Data Inserted";
+         echo "<script>alert('Record Updated')</script>";
+                 ?>
+        <meta http-equiv="refresh" content="0;url=http://localhost/dbms/display.php" />
+        <?php
     }
     else
     {
-        echo "Failed";
+        echo "Failed to update";
+
     }
 }
 else 
