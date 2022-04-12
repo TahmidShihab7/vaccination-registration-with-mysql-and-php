@@ -22,6 +22,14 @@
         font-weight:bold;
         cursor: pointer;
       }
+      .delete{
+        background-color:#d11a2a ;
+        color:whitesmoke;
+        border-radius: 3px;
+        outline:none;
+        font-weight:bold;
+        cursor: pointer;
+      }
     </style>
   </head>
 <body>
@@ -66,17 +74,25 @@
        <td>".$result['phone']."</td>
        <td>".$result['vaccine']."</td>
        <td>".$result['address']."</td>
-       <td><a href='change.php?id=$result[id]'><input type='submit' value='Update' class='update'</a></td>
+       <td><a href='change.php?id=$result[id]'><input type='submit' value='Update' class='update'</a>
+
+       <a href='delete.php?id=$result[id]'><input type='submit' value='Delete' class='delete' onclick='return check()'</a></td>
     
        </tr>
        ";
    }
  }
  else{
-         echo "There has no stored records."; 
+         echo "There is no stored records."; 
  }
 ?>
 </table>
+<script>
+  function check()
+  {
+    return confirm('Are you sure to delete this information?');
+  }
+</script>
 </body>
 </html>
  <!-- echo $result['fname']." ".$result['lname']." ".$result['gender']." ".$result['email']." ".$result['phone']." ".$result['address']."<br>"; -->
